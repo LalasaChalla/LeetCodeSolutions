@@ -7,6 +7,9 @@ class Solution(object):
         x=abs(x)
         l=[int(d) for d in str(x)]
         l.reverse()
-        m=int(''.join(map(str,l)))
-        return m*sign
+        m=int(''.join(map(str,l)))*sign
+        
+        if m < -2**31 or m > 2**31 - 1:
+            return 0
+        return m 
         
